@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">arshit-EmotiLog</string>
+    <string name="title_home">Emoji</string>
+    <string name="title_dashboard">Logs</string>
+    <string name="title_notifications">Summary</string>
+    <string name="emoji_title">How are you feeling?</string>
+</resources>
