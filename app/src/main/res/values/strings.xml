@@ -1,7 +1,10 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">arshit-EmotiLog</string>
     <string name="title_home">Emoji</string>
     <string name="title_dashboard">Logs</string>
     <string name="title_notifications">Summary</string>
     <string name="emoji_title">How are you feeling?</string>
+    <string name="log_beginning"><![CDATA[>]]></string>
+    <string name="logs_scroll_description">Scrollable list of emotion logs</string>
+    <string name="log_query" tools:ignore="TypographyDashes">$ emotion-logs --all</string>
 </resources>

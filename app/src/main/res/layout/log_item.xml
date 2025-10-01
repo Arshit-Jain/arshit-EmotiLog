@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/terminalPrefix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/log_beginning"
+        android:textSize="16sp"
+        android:textColor="#1A7F37"
+        android:fontFamily="monospace"
+        android:layout_marginEnd="8dp"/>
+
+    <TextView
+        android:id="@+id/emojiSymbolText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginEnd="12dp"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/emojiNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#24292F"
+            android:fontFamily="monospace"/>
+
+        <TextView
+            android:id="@+id/timestampText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#57606A"
+            android:fontFamily="monospace"
+            android:layout_marginTop="2dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

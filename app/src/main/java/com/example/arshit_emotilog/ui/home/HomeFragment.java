@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 
 // Import your Emoji class
 import com.example.arshit_emotilog.Emoji;
+import com.example.arshit_emotilog.EmojiLog;
 import com.example.arshit_emotilog.R;
 
 public class HomeFragment extends Fragment {
@@ -67,9 +68,14 @@ public class HomeFragment extends Fragment {
         button.setMinHeight(200);
 
         // Click listener - just show a toast for now
-        button.setOnClickListener(v ->
-                Toast.makeText(getContext(), "You selected: " + emoji.getName(), Toast.LENGTH_SHORT).show()
-        );
+        // Click listener - log the emoji
+        button.setOnClickListener(v -> {
+            // Create and add log
+            EmojiLog log = new EmojiLog(emoji.getSymbol(), emoji.getName(), System.currentTimeMillis());
+            EmojiLog.addLog(log);
+
+            Toast.makeText(getContext(), "Logged: " + emoji.getName(), Toast.LENGTH_SHORT).show();
+        });
 
         return button;
     }
