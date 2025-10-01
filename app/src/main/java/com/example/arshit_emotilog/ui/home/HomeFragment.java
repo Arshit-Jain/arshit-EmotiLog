@@ -73,8 +73,6 @@ public class HomeFragment extends Fragment {
             // Create and add log
             EmojiLog log = new EmojiLog(emoji.getSymbol(), emoji.getName(), System.currentTimeMillis());
             EmojiLog.addLog(log);
-
-            Toast.makeText(getContext(), "Logged: " + emoji.getName(), Toast.LENGTH_SHORT).show();
         });
 
         return button;
