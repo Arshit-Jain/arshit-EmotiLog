@@ -9,7 +9,7 @@ public class Emoji {
     // Store all potential emojis
     private static final HashMap<String, String> potentialEmojis = new HashMap<>();
 
-    // Static block to load default emojis (first 8 + extras)
+    // Static block to load default emojis
     static {
         potentialEmojis.put("😊", "Happy");
         potentialEmojis.put("😢", "Sad");
@@ -37,7 +37,7 @@ public class Emoji {
         return new HashMap<>(potentialEmojis);
     }
 
-    // **New method**: Get all emojis as Emoji[] for UI/adapters
+
     public static Emoji[] getAllEmojiObjects() {
         HashMap<String, String> all = getAllEmojis();
         Emoji[] result = new Emoji[all.size()];
