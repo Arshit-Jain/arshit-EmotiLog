@@ -1,4 +1,4 @@
-package com.example.arshit_emotilog.ui.home;
+package com.example.arshit_emotilog.ui.EmojiDashboard;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
-import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -18,22 +18,22 @@ import com.example.arshit_emotilog.Emoji;
 import com.example.arshit_emotilog.EmojiLog;
 import com.example.arshit_emotilog.R;
 
-public class HomeFragment extends Fragment {
+
+public class EmojiPage extends Fragment {
 
     private GridLayout emojiGridLayout;
 
     @Nullable
     @Override
+    // on create view to display emojis
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
-
+        View view = inflater.inflate(R.layout.emoji_page, container, false);
         emojiGridLayout = view.findViewById(R.id.emojiGridLayout);
-
         setupEmojiButtons();
-
         return view;
     }
 
+    // using grid layout to display emojis
     private void setupEmojiButtons() {
         Emoji[] emojis = Emoji.getDefaultEmojis();
 
@@ -47,30 +47,28 @@ public class HomeFragment extends Fragment {
     private Button createEmojiButton(Emoji emoji) {
         Button button = new Button(getContext());
 
-        // Set button text (emoji + name)
+        // Setting button properties
         button.setText(emoji.getSymbol() + "\n" + emoji.getName());
         button.setTextSize(18);
-
-        // Set button styling with rounded corners
-        button.setBackgroundResource(R.drawable.rounded_button);
-        button.getBackground().setTint(Color.parseColor(emoji.getColor()));
+        button.getBackground().setTint(Color.parseColor("#26282A"));
         button.setTextColor(Color.WHITE);
-
-        // Set layout parameters for grid (2 columns)
         GridLayout.LayoutParams params = new GridLayout.LayoutParams();
         params.width = 0;
         params.height = GridLayout.LayoutParams.WRAP_CONTENT;
         params.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f);
         params.setMargins(8, 8, 8, 8);
         button.setLayoutParams(params);
-
-        // Set minimum height for nice boxes
         button.setMinHeight(200);
 
-        // Click listener - just show a toast for now
-        // Click listener - log the emoji
+        // With help of AI, added change color when clicked
         button.setOnClickListener(v -> {
-            // Create and add log
+            button.setBackgroundColor(Color.parseColor("#DDDDDD"));
+            new android.os.Handler().postDelayed(
+                    () -> button.setBackgroundColor(Color.parseColor("#26282A")),
+                    150
+            );
+
+            // Logging
             EmojiLog log = new EmojiLog(emoji.getSymbol(), emoji.getName(), System.currentTimeMillis());
             EmojiLog.addLog(log);
         });

@@ -7,4 +7,13 @@
     <string name="log_beginning"><![CDATA[>]]></string>
     <string name="logs_scroll_description">Scrollable list of emotion logs</string>
     <string name="log_query" tools:ignore="TypographyDashes">$ emotion-logs --all</string>
+    <string name="times_title">times</string>
+    <string name="daily_summary">Daily Summary</string>
+    <string name="today">Today</string>
+    <string name="select_date">Select Date</string>
+    <string name="total_emotions_logged_today">Total Emotions Logged Today</string>
+    <string name="total_emotions_logged">Total Emotions Logged Today</string>
+    <string name="emotion_breakdown">Emotion Breakdown</string>
+    <string name="_0">0</string>
+    <string name="container_for_summary">container for summary</string>
 </resources>

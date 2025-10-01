@@ -1,44 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="12dp"
-    android:background="#F6F8FA"
-    android:layout_marginBottom="8dp"
-    android:gravity="center_vertical">
+    android:orientation="horizontal">
 
     <TextView
         android:id="@+id/summaryEmojiSymbol"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="32sp"
-        android:layout_marginEnd="16dp"/>
+        android:layout_height="wrap_content"/>
 
     <TextView
         android:id="@+id/summaryEmojiName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="18sp"
-        android:textColor="#24292F"
-        android:textStyle="bold"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <TextView
         android:id="@+id/summaryEmojiCount"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#0969DA"
-        android:layout_marginStart="16dp"/>
+        android:layout_height="wrap_content"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" times"
-        android:textSize="14sp"
-        android:textColor="#57606A"
-        android:layout_marginStart="4dp"/>
-
+        android:text="@string/times_title"/>
 </LinearLayout>

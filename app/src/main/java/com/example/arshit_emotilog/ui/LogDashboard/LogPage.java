@@ -1,4 +1,4 @@
-package com.example.arshit_emotilog.ui.dashboard;
+package com.example.arshit_emotilog.ui.LogDashboard;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -14,31 +14,26 @@ import com.example.arshit_emotilog.EmojiLog;
 import com.example.arshit_emotilog.R;
 import java.util.ArrayList;
 
-public class DashboardFragment extends Fragment {
+// Note: I implemented majority of the logic but I wanted this page to look like logcat.
+// I used ChatGPT's help to achieve that UI.
+
+public class LogPage extends Fragment {
 
     private LinearLayout logsContainer;
 
     @Nullable
     @Override
+    // on create view to display logs
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
-
+        View view = inflater.inflate(R.layout.log_page, container, false);
         logsContainer = view.findViewById(R.id.logsContainer);
-
         displayLogs();
-
         return view;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        displayLogs();
-    }
-
+    // displaying logs through calling createLogView function for data
     private void displayLogs() {
         logsContainer.removeAllViews();
-
         ArrayList<EmojiLog> logs = EmojiLog.getAllLogs();
 
         for (EmojiLog log : logs) {
@@ -47,10 +42,10 @@ public class DashboardFragment extends Fragment {
         }
     }
 
+    // getting data to display logs
     @SuppressLint("SetTextI18n")
     private View createLogView(EmojiLog log) {
         View logItem = LayoutInflater.from(getContext()).inflate(R.layout.log_item, logsContainer, false);
-
         TextView emojiSymbolText = logItem.findViewById(R.id.emojiSymbolText);
         TextView emojiNameText = logItem.findViewById(R.id.emojiNameText);
         TextView timestampText = logItem.findViewById(R.id.timestampText);
