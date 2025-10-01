@@ -27,7 +27,6 @@ public class EmojiPage extends Fragment {
     private LinearLayout checkboxContainer;
     private final HashMap<String, CheckBox> emojiCheckBoxes = new HashMap<>();
 
-    // In-memory storage for emoji enabled state (defaults to true)
     private static final HashMap<String, Boolean> emojiEnabledState = new HashMap<>();
 
     @Nullable
@@ -112,7 +111,6 @@ public class EmojiPage extends Fragment {
         return button;
     }
 
-    // Optional: Method to reset all emojis to enabled state
     public static void resetEmojiStates() {
         emojiEnabledState.clear();
     }
