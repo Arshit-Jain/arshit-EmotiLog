@@ -21,7 +21,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 
-
+//Fragment for summary page, manages date and calculate counts
 public class SummaryPage extends Fragment {
 
     private TextView dateText;
@@ -51,7 +51,7 @@ public class SummaryPage extends Fragment {
         return view;
     }
 
-    // Asked LLM's to help me with this function
+    // asked LLM's to help me with this function
     // function to pick date
     private void showDatePicker() {
         Calendar calendar = Calendar.getInstance();
@@ -97,6 +97,7 @@ public class SummaryPage extends Fragment {
         displayEmotionBreakdown(emotionCounts);
     }
 
+    // this displays all the emotions
     private void displayEmotionBreakdown(HashMap<String, EmotionCount> emotionCounts) {
         summaryContainer.removeAllViews();
 
@@ -115,7 +116,7 @@ public class SummaryPage extends Fragment {
         ArrayList<EmotionCount> sortedEmotions = new ArrayList<>(emotionCounts.values());
         sortedEmotions.sort((e1, e2) -> Integer.compare(e2.count, e1.count));
 
-        // Displaying emotions
+        // displaying emotions
         for (EmotionCount emotionCount : sortedEmotions) {
             View summaryItem = createSummaryItemView(emotionCount);
             summaryContainer.addView(summaryItem);

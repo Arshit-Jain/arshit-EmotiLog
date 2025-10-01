@@ -2,30 +2,29 @@ package com.example.arshit_emotilog;
 
 import java.util.ArrayList;
 
+// this class helps in create logs and it's objects
 public class EmojiLog {
     private final String emojiSymbol;
     private final String emojiName;
     private final long timestamp;
 
-    // Static ArrayList to store all logs
+    // arayList to store all logs
     private static final ArrayList<EmojiLog> allLogs = new ArrayList<>();
 
-    // Constructor
+    // constructor
     public EmojiLog(String emojiSymbol, String emojiName, long timestamp) {
         this.emojiSymbol = emojiSymbol;
         this.emojiName = emojiName;
         this.timestamp = timestamp;
     }
 
-    // Getters
+    // getters
     public String getEmojiSymbol() {
         return emojiSymbol;
     }
-
     public String getEmojiName() {
         return emojiName;
     }
-
     public long getTimestamp() {
         return timestamp;
     }

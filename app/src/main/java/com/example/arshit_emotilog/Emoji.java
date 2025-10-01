@@ -2,6 +2,7 @@ package com.example.arshit_emotilog;
 
 import java.util.HashMap;
 
+// this class helps in create emojis and it's objects
 public class Emoji {
     private final String symbol;
     private final String name;
@@ -9,7 +10,7 @@ public class Emoji {
     // Store all potential emojis
     private static final HashMap<String, String> potentialEmojis = new HashMap<>();
 
-    // Static block to load default emojis
+    // loading default emojis
     static {
         potentialEmojis.put("😊", "Happy");
         potentialEmojis.put("😢", "Sad");
@@ -21,23 +22,24 @@ public class Emoji {
         potentialEmojis.put("😜", "Playful");
     }
 
-    // Constructor
+    // constructor
     public Emoji(String symbol, String name) {
         this.symbol = symbol;
         this.name = name;
     }
 
-    // Getters
+    // getters
     public String getSymbol() { return symbol; }
     public String getName() { return name; }
 
 
-    // Get all emojis as HashMap
+    // getting all emojis as HashMap
     public static HashMap<String, String> getAllEmojis() {
         return new HashMap<>(potentialEmojis);
     }
 
 
+    // getting all emojis as objects
     public static Emoji[] getAllEmojiObjects() {
         HashMap<String, String> all = getAllEmojis();
         Emoji[] result = new Emoji[all.size()];

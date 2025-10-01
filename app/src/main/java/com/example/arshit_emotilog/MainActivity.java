@@ -12,6 +12,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.arshit_emotilog.databinding.ActivityMainBinding;
 
+// this class helps in managing navigation and it's UI components
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;

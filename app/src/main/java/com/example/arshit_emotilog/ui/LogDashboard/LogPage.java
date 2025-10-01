@@ -16,9 +16,10 @@ import java.util.ArrayList;
 
 // Note: I implemented majority of the logic but I wanted this page to look like logcat.
 // I used ChatGPT's help to achieve that UI.
-
+// creates log page
 public class LogPage extends Fragment {
 
+    // UI component
     private LinearLayout logsContainer;
 
     @Nullable

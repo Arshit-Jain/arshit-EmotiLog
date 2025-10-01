@@ -21,6 +21,8 @@ import com.example.arshit_emotilog.R;
 
 import java.util.HashMap;
 
+// Used LLM to understand Fragment and to make clean UI
+// fragment for main emoji page, manages customization and clicks
 public class EmojiPage extends Fragment {
 
     private GridLayout emojiGridLayout;
@@ -29,8 +31,10 @@ public class EmojiPage extends Fragment {
 
     private static final HashMap<String, Boolean> emojiEnabledState = new HashMap<>();
 
+
     @Nullable
     @Override
+    // creates base view
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
@@ -45,6 +49,7 @@ public class EmojiPage extends Fragment {
         return view;
     }
 
+    // sets up all the checkboxes
     private void setupCheckBoxes() {
         Emoji[] allEmojis = Emoji.getAllEmojiObjects();
 
@@ -81,14 +86,15 @@ public class EmojiPage extends Fragment {
         }
     }
 
+    // creates emoji button
     @SuppressLint("SetTextI18n")
     private Button createEmojiButton(Emoji emoji) {
+        // button properties
         Button button = new Button(getContext());
         button.setText(emoji.getSymbol() + "\n" + emoji.getName());
         button.setTextSize(18);
         button.getBackground().setTint(Color.parseColor("#26282A"));
         button.setTextColor(Color.WHITE);
-
         GridLayout.LayoutParams params = new GridLayout.LayoutParams();
         params.width = 0;
         params.height = GridLayout.LayoutParams.WRAP_CONTENT;
@@ -109,9 +115,5 @@ public class EmojiPage extends Fragment {
         });
 
         return button;
-    }
-
-    public static void resetEmojiStates() {
-        emojiEnabledState.clear();
     }
 }
